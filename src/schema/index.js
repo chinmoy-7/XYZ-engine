@@ -8,8 +8,8 @@ export const formSchema=Yup.object({
 })
 
 export const step2Schema=Yup.object({
-    max_x:Yup.string().required("Empty Field"), 
-    min_x:Yup.string().required("Empty Field"),
-    max_y:Yup.string().required("Empty Field"),
-    min_y:Yup.string().required("Empty Field"),
+    max_x:Yup.number("Must be a number").positive("Must be a number"),
+    min_x:Yup.number("Must be a number").positive("Must be a number"),
+    max_y:Yup.number("Must be a number").positive("Must be a number"),
+    min_y:Yup.number("Must be a number").positive("Must be a number"),
 })

@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 import 'jspdf-autotable';
-import { formContext } from '../context/formContext';
 
 export  const generatePDF = (data) => {
     const doc = new jsPDF();

@@ -6,20 +6,21 @@ const formContext=createContext()
 
 const FormContextProvider=({children})=>{
     const [csv,setCsv]=useState([])
-    const initialValues={
+    const [initialValues,setInitialValues]=useState({
         project_name:"",
         project_desc:"",
         client:"",
         contractor:"",
         csv:"",
-        max_X:"", 
-        min_X:"",
-        max_Y:"",
-        min_Y:"",
-        max_Z:"",
-        min_Z:"",
+        max_x:"", 
+        min_x:"",
+        max_y:"",
+        min_y:"",
+        max_z:"",
+        min_z:"",
 
-    }
+    })
+    console.log(initialValues,"COntext========")
     const csvObject = async (event) => {
         const file = event.target.files[0];
         const results = await new Promise((resolve, reject) => {
@@ -38,7 +39,7 @@ const FormContextProvider=({children})=>{
         setCsv(results);
       };
     return(
-        <formContext.Provider value={{initialValues,csvObject,setCsv,csvObject,csv}}>
+        <formContext.Provider value={{csvObject,setCsv,csvObject,csv,initialValues}}>
             {children}
         </formContext.Provider>
     )
