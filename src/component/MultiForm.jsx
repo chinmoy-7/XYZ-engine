@@ -20,6 +20,8 @@ export const MultiForm = ({ children, initialValues, onSubmit }) => {
     setStepNumber(stepNumber - 1);
   };
   const handleSubmit = async (values, actions) => {
+
+
     if (currentStep.props.onSubmit) {
       await currentStep.props.onSubmit(values);
     }

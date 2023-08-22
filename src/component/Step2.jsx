@@ -34,12 +34,12 @@ export const Step2 = () => {
       <InputField csv={csv}  name="max_y" />
       </Box>
       <Box marginBottom={"10px"} display={"flex"} flexDirection={"column"} width={"45%"}>
-      <InputLabel htmlFor="max_y">Max Y</InputLabel>
-      <InputField csv={csv}  name="max_y" />
+      <InputLabel htmlFor="min_z">Min Z </InputLabel>
+      <InputField csv={csv}  name="min_z" />
       </Box>
       <Box marginBottom={"10px"} display={"flex"} flexDirection={"column"} width={"45%"}>
-      <InputLabel htmlFor="max_y">Max Y</InputLabel>
-      <InputField csv={csv}  name="max_y" />
+      <InputLabel htmlFor="max_z">Max Z</InputLabel>
+      <InputField csv={csv}  name="max_z" />
       </Box>
       </Grid>
     </div>

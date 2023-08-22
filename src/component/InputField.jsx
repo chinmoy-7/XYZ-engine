@@ -12,8 +12,9 @@ export const InputField = ({ csv, label, ...props }) => {
     let maxX = Number.NEGATIVE_INFINITY;
     let maxY = Number.NEGATIVE_INFINITY;
     let maxZ = Number.NEGATIVE_INFINITY;
-    
+    let max=[]
     for(let item of csv){
+      // console.log(item.Z)
       if(item.X<minX){
         minX=item.X
       }
@@ -26,13 +27,10 @@ export const InputField = ({ csv, label, ...props }) => {
       if(item.Y>maxY){
         maxY=item.Y
       }
-      if(item.Z>maxZ){
-        maxZ=item.Z
-      }
-      if(item.Z<minZ){
-        minZ=item.Z
-      }
+      max.push(item.Z)
     }
+    minZ=Math.min(...max)
+    maxZ=Math.max(...max)
     // MIN VALUE
     if (field.name == "min_x") {
       field.value = minX
@@ -42,7 +40,7 @@ export const InputField = ({ csv, label, ...props }) => {
       field.value = minY
       
     }
-    if (field.name == "max_z") {
+    if (field.name == "min_z") {
       field.value = minZ
       
     }
@@ -59,11 +57,8 @@ export const InputField = ({ csv, label, ...props }) => {
       field.value = maxZ
       
     }
-    meta.initialTouched=true
   }
-  useEffect(()=>{
 
-  },[field.name])
   return (
     <TextField
       fullWidth

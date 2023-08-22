@@ -18,18 +18,20 @@ export const Table = () => {
         sortable: true,
         filter: true,
         floatingFilter: true,
-        flex: 1,
+        flex: 0,
         // editable: edit,
       };
   return (
     <>
-    <Grid container display={"flex"} gap={5} justifyContent={"center"} alignItems={"center"}>
+    <Grid container sx={{background: "linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%)"}} display={"flex"} gap={1} flexDirection={"column"}  height={"100vh"} justifyContent={"center"} alignItems={"center"}>
         <Grid item>
                 <Button variant='contained' onClick={()=>generatePDF(csv)}>Export as pdf</Button>
         </Grid>
-        <Box className="ag-theme-alpine" sx={{ height: "90vh", width: "100vw" }}>
+        <Box width={"100vw"} display={"flex"} justifyContent={"center"} alignItems={"center"}>       
+         <Box className="ag-theme-alpine" boxShadow={"10px 10px black"} sx={{ height: "90vh", width: {xs:"90vw",sm:"90vw",md:"90vw",lg:"60vw"} }} >
 
         <AgGridReact
+        
           columnDefs={columnDef}
           rowData={csv}
           defaultColDef={defaultCol}
@@ -38,6 +40,8 @@ export const Table = () => {
         //   onGridReady={handleGrid}
         />
       </Box>
+      </Box>
+
       </Grid>
     </>
   )

@@ -12,4 +12,6 @@ export const step2Schema=Yup.object({
     min_x:Yup.number("Must be a number").positive("Must be a number"),
     max_y:Yup.number("Must be a number").positive("Must be a number"),
     min_y:Yup.number("Must be a number").positive("Must be a number"),
+    max_z:Yup.number("Must be a number").positive("Must be a number"),
+    min_z:Yup.number("Must be a number").positive("Must be a number"),
 })
