@@ -3,28 +3,45 @@ import { InputField } from "./InputField";
 import { Step1 } from "./Step1";
 import { formContext } from "../context/contextForm";
 import { useFormik } from "formik";
+import {Grid,Box} from "@mui/material";
 import { InputLabel } from "@mui/material";
+
 
 export const Step2 = () => {
   const { csvObject, csv, initialValues } = useContext(formContext);
-  // if(csv){
-  //   csv.slice(0,6).map(item=>{
-  //     // console.log(item,"<><>=s",initialValues)
-  //     initialValues["min_X"]=[...initialValues["min_X"],item?.X]
-  //   })
-  // }
+
   return (
     <div>
       <Step1 disabled={true} />
+      <Grid container   sx={{width:{xs:"70vw",sm:"50vw",md:"40vw",lg:"20vw"}}} gap={0} minHeight={"10vh"} height={"40vh"} display={"flex"} justifyContent={"space-between"} justifyItems={"center"} >
+
       <InputField type="file" name="csv" onChange={(e) => csvObject(e)} />
+      <Box display={"flex"} flexDirection={"column"} width={"45%"}>
       <InputLabel htmlFor="min_x">Min X</InputLabel>
       <InputField csv={csv} name="min_x" />
+      </Box>
+      <Box  display={"flex"} flexDirection={"column"} width={"45%"}>
       <InputLabel htmlFor="max_x">Max X</InputLabel>
-      <InputField csv={csv} name="max_x" />
+      <InputField csv={csv}  name="max_x" />
+      </Box>
+      <Box display={"flex"} flexDirection={"column"} width={"45%"}>
       <InputLabel htmlFor="min_y">Min Y</InputLabel>
-      <InputField csv={csv} name="min_y" />
+      <InputField csv={csv}  name="min_y" />
+      </Box>
+
+      <Box marginBottom={"10px"} display={"flex"} flexDirection={"column"} width={"45%"}>
       <InputLabel htmlFor="max_y">Max Y</InputLabel>
-      <InputField csv={csv} name="max_y" />
+      <InputField csv={csv}  name="max_y" />
+      </Box>
+      <Box marginBottom={"10px"} display={"flex"} flexDirection={"column"} width={"45%"}>
+      <InputLabel htmlFor="max_y">Max Y</InputLabel>
+      <InputField csv={csv}  name="max_y" />
+      </Box>
+      <Box marginBottom={"10px"} display={"flex"} flexDirection={"column"} width={"45%"}>
+      <InputLabel htmlFor="max_y">Max Y</InputLabel>
+      <InputField csv={csv}  name="max_y" />
+      </Box>
+      </Grid>
     </div>
   );
 };

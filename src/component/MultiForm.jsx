@@ -1,6 +1,7 @@
 import { Form, Formik } from "formik";
 import React, { useState } from "react";
 import { FormNav } from "./FormNav";
+import { Grid } from "@mui/material";
 
 export const MultiForm = ({ children, initialValues, onSubmit }) => {
   const steps = React.Children.toArray(children);
@@ -36,6 +37,7 @@ export const MultiForm = ({ children, initialValues, onSubmit }) => {
         onSubmit={handleSubmit}
         validationSchema={currentStep.props.validationSchema}
       >
+
         {(formik) => (
           <Form>
             {currentStep}

@@ -59,6 +59,7 @@ export const InputField = ({ csv, label, ...props }) => {
       field.value = maxZ
       
     }
+    meta.initialTouched=true
   }
   useEffect(()=>{
 
@@ -71,6 +72,7 @@ export const InputField = ({ csv, label, ...props }) => {
       disabled={csv!=undefined&&csv?.length!=0?true:false}
       {...field}
       {...props}
+      size={"small"}
       error={meta.touched && Boolean(meta.error)}
       helperText={meta.touched && meta.error}
     />
